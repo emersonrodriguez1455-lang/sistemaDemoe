@@ -115,33 +115,35 @@
   --outline: #a9adb9;
   --outline-variant: #e2e4ea;
 
-  /* Primary — deep indigo "ink". Distinguished, corporate, not generic blue. */
-  --primary: #3d3d91;
-  --on-primary: #fdfdff;
-  --primary-container: #e2e1f7;
-  --on-primary-container: #2a2a6b;
+  /* Primary — near-black ink. Brand color / primary actions / active nav. NOT indigo, NOT grey. */
+  --primary: #1a1a1a;
+  --on-primary: #ffffff;
+  --primary-container: #e7e7e9;
+  --on-primary-container: #1a1a1a;
 
-  /* Secondary — muted slate that harmonizes with the ink primary */
-  --secondary: #676b7c;
+  /* Secondary — neutral grey, harmonizes with the near-black primary */
+  --secondary: #5c5f68;
   --on-secondary: #ffffff;
   --secondary-container: #e7e8ed;
-  --on-secondary-container: #383b47;
+  --on-secondary-container: #33353c;
 
-  /* Status — three distinct hues, none is leafy agro-green */
-  --success: #158a86;                 /* refined teal */
+  /* Status — monochrome by design. "Success" and "warning" are now shades of
+     grey/black differentiated by weight + icon, not by hue. Only "error" keeps
+     color, reserved strictly for delete / eliminado / validation messages. */
+  --success: #1a1a1a;                 /* was teal — now near-black, bold weight carries meaning */
   --on-success: #ffffff;
-  --success-container: #cfeceb;
-  --on-success-container: #0b5350;
+  --success-container: #eceef1;
+  --on-success-container: #26282d;
 
-  --warning: #c0872b;                 /* amber */
+  --warning: #4b4e57;                 /* was amber — now mid-grey, distinguished by icon + weight */
   --on-warning: #ffffff;
-  --warning-container: #f4e4c1;
-  --on-warning-container: #6d4d12;
+  --warning-container: #eceef1;
+  --on-warning-container: #3a3c43;
 
-  --error: #c23a2e;                   /* red */
+  --error: #b3453b;                   /* red — softened, reserved ONLY for eliminar / ELIMINADO / errores */
   --on-error: #ffffff;
-  --error-container: #f6d9d4;
-  --on-error-container: #7a2018;
+  --error-container: #f1dcd9;
+  --on-error-container: #7a2f27;
 }
 
 @layer base {
