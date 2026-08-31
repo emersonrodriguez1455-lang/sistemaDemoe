@@ -21,10 +21,17 @@ const ROWS: {
   { ts: '27/8/2026', hora: '4:36:10 p. m.', usuario: 'Practicante', action: 'CREADO', acta: 'Jose Fernandez' },
 ]
 
+/*
+ * Monocromático total: los 3 estados (CREADO, EDITADO, ELIMINADO) son
+ * variantes de gris/negro, igual que la columna de Acciones en Historial.
+ * Se distinguen únicamente por ícono y peso — sin color, ni siquiera en
+ * ELIMINADO (el rojo queda solo para la acción interactiva de eliminar,
+ * no para esta etiqueta de solo lectura).
+ */
 const BADGE: Record<Action, { cls: string; icon: typeof PlusCircle }> = {
-  CREADO: { cls: 'bg-success-container text-on-success-container', icon: PlusCircle },
-  EDITADO: { cls: 'bg-warning-container text-on-warning-container', icon: PencilLine },
-  ELIMINADO: { cls: 'bg-error-container text-on-error-container', icon: Trash2 },
+  CREADO: { cls: 'bg-surface-container-high text-on-surface', icon: PlusCircle },
+  EDITADO: { cls: 'border border-outline bg-surface text-on-surface', icon: PencilLine },
+  ELIMINADO: { cls: 'bg-on-surface text-surface', icon: Trash2 },
 }
 
 function ActionBadge({ action }: { action: Action }) {
@@ -40,6 +47,7 @@ function ActionBadge({ action }: { action: Action }) {
       {action}
     </span>
   )
+
 }
 
 export default function AuditoriaPage() {
