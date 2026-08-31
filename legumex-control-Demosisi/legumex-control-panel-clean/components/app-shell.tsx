@@ -92,7 +92,7 @@ function UserFooter() {
       </div>
       <Link
         href="/login"
-        className="flex min-h-11 items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-on-surface-variant transition-colors hover:bg-error-container hover:text-on-error-container"
+        className="flex min-h-11 items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-on-surface-variant transition-colors hover:bg-surface-container-high hover:text-on-surface"
       >
         <LogOut className="h-5 w-5" strokeWidth={2} />
         Cerrar Sesión
@@ -221,4 +221,5 @@ export function AppShell({
       </div>
     </div>
   )
+  
 }
