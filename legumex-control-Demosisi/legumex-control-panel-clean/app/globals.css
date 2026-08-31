@@ -1,0 +1,160 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+/*
+  ==========================================================================
+  LEGUMEX · Control Operativo — Material 3 theme (LIGHT ONLY)
+  --------------------------------------------------------------------------
+  Drop-in for your real repo: this file only redefines the color/typography
+  design tokens. It maps onto the same Material 3 token names your app
+  already consumes (surface / surface-container-* / outline-variant /
+  on-surface / primary / on-primary, etc.), so no JSX/structure changes are
+  required. Direction: minimalist corporate "ink" palette — serious and
+  cohesive, not agro-green, not pastel.
+  ==========================================================================
+*/
+
+@theme inline {
+  /* fonts */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-manrope), var(--font-inter), sans-serif;
+
+  /* ---- Material 3 color roles -> Tailwind utilities ---- */
+  --color-background: var(--background);
+  --color-on-background: var(--on-background);
+  --color-foreground: var(--on-background);
+
+  --color-surface: var(--surface);
+  --color-surface-bright: var(--surface-bright);
+  --color-surface-dim: var(--surface-dim);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary-container: var(--on-secondary-container);
+
+  --color-success: var(--success);
+  --color-on-success: var(--on-success);
+  --color-success-container: var(--success-container);
+  --color-on-success-container: var(--on-success-container);
+
+  --color-warning: var(--warning);
+  --color-on-warning: var(--on-warning);
+  --color-warning-container: var(--warning-container);
+  --color-on-warning-container: var(--on-warning-container);
+
+  --color-error: var(--error);
+  --color-on-error: var(--on-error);
+  --color-error-container: var(--error-container);
+  --color-on-error-container: var(--on-error-container);
+  --color-destructive: var(--error);
+
+  /* shadcn compatibility aliases (so ui/* primitives stay themed) */
+  --color-card: var(--surface-container-lowest);
+  --color-card-foreground: var(--on-surface);
+  --color-popover: var(--surface-container-lowest);
+  --color-popover-foreground: var(--on-surface);
+  --color-primary-foreground: var(--on-primary);
+  --color-secondary-foreground: var(--on-secondary-container);
+  --color-muted: var(--surface-container);
+  --color-muted-foreground: var(--on-surface-variant);
+  --color-accent: var(--surface-container-high);
+  --color-accent-foreground: var(--on-surface);
+  --color-border: var(--outline-variant);
+  --color-input: var(--outline-variant);
+  --color-ring: var(--primary);
+
+  /* extra spacing steps used by icons/controls */
+  --spacing-4\.5: 1.125rem;
+
+  /* radii */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+}
+
+:root {
+  color-scheme: light;
+  --radius: 0.625rem;
+
+  /* Neutrals — cool ink-tinted greys (hue ~262). Page = light grey, cards = white. */
+  --background: #f3f4f7;              /* general page background: clear neutral grey, NOT pure white */
+  --on-background: #2a2c34;
+
+  --surface: #ffffff;
+  --surface-bright: #ffffff;
+  --surface-dim: #e9eaef;
+  --surface-container-lowest: #ffffff;  /* cards sit here — white on grey */
+  --surface-container-low: #fafbfc;
+  --surface-container: #f1f2f5;
+  --surface-container-high: #eaebf0;
+  --surface-container-highest: #e4e5eb;
+
+  --on-surface: #2a2c34;
+  --on-surface-variant: #6b6e7b;
+
+  --outline: #a9adb9;
+  --outline-variant: #e2e4ea;
+
+  /* Primary — deep indigo "ink". Distinguished, corporate, not generic blue. */
+  --primary: #3d3d91;
+  --on-primary: #fdfdff;
+  --primary-container: #e2e1f7;
+  --on-primary-container: #2a2a6b;
+
+  /* Secondary — muted slate that harmonizes with the ink primary */
+  --secondary: #676b7c;
+  --on-secondary: #ffffff;
+  --secondary-container: #e7e8ed;
+  --on-secondary-container: #383b47;
+
+  /* Status — three distinct hues, none is leafy agro-green */
+  --success: #158a86;                 /* refined teal */
+  --on-success: #ffffff;
+  --success-container: #cfeceb;
+  --on-success-container: #0b5350;
+
+  --warning: #c0872b;                 /* amber */
+  --on-warning: #ffffff;
+  --warning-container: #f4e4c1;
+  --on-warning-container: #6d4d12;
+
+  --error: #c23a2e;                   /* red */
+  --on-error: #ffffff;
+  --error-container: #f6d9d4;
+  --on-error-container: #7a2018;
+}
+
+@layer base {
+  * {
+    @apply border-outline-variant;
+  }
+  body {
+    @apply bg-background text-on-surface font-sans antialiased;
+  }
+  /* Consistent, corporate focus ring for every interactive element */
+  :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+}

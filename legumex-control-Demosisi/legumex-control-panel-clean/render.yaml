@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: legumex-control-panel
+    env: node
+    plan: free
+    buildCommand: pnpm install --prod && pnpm build
+    startCommand: pnpm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_APP_NAME
+        value: Legumex Control Panel
+      - key: NEXT_PUBLIC_APP_VERSION
+        value: 1.0.0
